@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Четыре таблицы</title>
+    <style>
+        /* Общий контейнер для таблиц — используем flex для аккуратного выравнивания */
+        .tables-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px;
+        }
+        table {
+            width: 200px;
+            border: 1px solid gray;
+            border-collapse: collapse;  /* чтобы границы были одинарными */
+        }
+        td, th {
+            border: 1px solid gray;
+            padding: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        caption {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="tables-container">
+    <!-- 1-я таблица: вариант с rowspan -->
+    <table>
+        <caption>Таблица 1 (rowspan)</caption>
+        <tbody>
+            <tr>
+                <td rowspan="2">1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 2-я таблица: вариант с colspan -->
+    <table>
+        <caption>Таблица 2 (colspan)</caption>
+        <tbody>
+            <tr>
+                <td colspan="2">1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 3-я таблица: комбинированная структура (например, как на первой схеме) -->
+    <table>
+        <caption>Таблица 3 (как на схеме 1)</caption>
+        <tbody>
+            <tr>
+                <td rowspan="2">1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td colspan="2">6</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 4-я таблица: комбинированная структура (как на второй схеме) -->
+    <table>
+        <caption>Таблица 4 (как на схеме 2)</caption>
+        <tbody>
+            <tr>
+                <td rowspan="2">1</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td colspan="2">6</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
