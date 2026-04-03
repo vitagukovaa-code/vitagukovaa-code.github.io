@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Стили — эксперименты</title>
+
+    <!-- 1. подключение Google Fonts: Roboto для заголовков, Caveat для <strong> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+    <!-- 2. подключение MathJax для отображения формул -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+
+    <!-- 4. подключение Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /*Бесшовный фон */
+            background: repeating-linear-gradient(45deg, #e9ecef 0px, #e9ecef 2px, #dee2e6 2px, #dee2e6 8px);
+            font-size: 1.5rem;
+            line-height: 2rem;
+            color: #2c3e50; 
+        }
+        .wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        /* для гармоничного стиля */
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;  /* шрифт Roboto для заголовков */
+            color: #1e466e;                     /* глубокий синий */
+            text-align: right;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.05);
+        }
+
+        p {
+            text-align: right; 
+        }
+
+        /* Курсивные элементы – бирюзовый */
+        em, i {
+            color: #16a085;
+            font-style: italic;
+        }
+
+        /* Элемент <strong> – шрифт Caveat, оранжевый акцент */
+        strong {
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #e67e22;
+        }
+
+        /*  Стили для <article>  */
+        article {
+            border: 2px solid #dcdde1;         /* светлая рамка */
+            border-radius: 25px;               /* скруглённые углы */
+            margin: 25px 0;                    /* внешние отступы */
+            padding: 20px 25px;                /* внутренние отступы */
+            background-color: rgba(255, 255, 255, 0.85); /* полупрозрачный фон */
+            transition: box-shadow 0.2s ease;
+        }
+
+        article:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Горизонтальная линия */
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #dcdde1, transparent);
+            margin: 10px 0;
+        }
+
+        /* Стиль для математических формул*/
+        mjx-container {
+            text-align: right !important;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <article>
+            <h1>Приватные и публичные программы</h1>
+            <h2>Приватные программы</h2>
+            <p><em>Приватными программами</em> я называю те, которые будут использоваться только вами (их
+                разработчиками) или очень ограниченным кругом других людей, чьи навыки, требования и компьютеры хорошо
+                известны.</p>
+            <h2>Публичные программы</h2>
+            <p><em>Публичные программы</em> — прямая противоположность приватным. Они распространяются среди большого
+                числа людей.</p>
+            <p><strong>Лу Гринзоу</strong></p>
+        </article>
+        <hr>
+        <article>
+            <h1>Великая теорема Ферма</h1>
+            <p><b>Великая теорема Ферма́</b> (или <b>последняя теорема Ферма</b>)&nbsp;— одна из самых популярных теорем
+                математики. Сформулирована французским математиком Пьером Ферма в 1637 году. Несмотря на простоту
+                формулировки, буквально, на <q>школьном</q> арифметическом уровне, доказательство теоремы искали многие
+                математики на протяжении более трёхсот лет. И только в 1994 году теорема была доказана английским
+                математиком Эндрю Уайлсом с коллегами; публикация доказательства состоялась в 1995 году.
+            </p>
+            <h2>Формулировка</h2>
+            <p>Теорема утверждает, что для любого натурального числа \(n&gt;2\) уравнение
+                \[a^n + b^n = c^n\]
+                не имеет решений в целых ненулевых числах \(a, b, c.\)
+            </p>
+        </article>
+    </div>
+</body>
+</html>
