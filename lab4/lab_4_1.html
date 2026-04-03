@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title>Вертикальное меню (белые кнопки)</title>
     <style>
         .menu {
             width: 200px;
-            background: blue;   /* синий фон меню */
+            background: blue;
         }
+
         .menu ul {
             list-style: none;
             margin: 0;
-            padding: 10px;         /* отступы внутри меню */
+            padding: 10px;
         }
+
         .menu li {
-            margin-bottom: 10px;   /* расстояние между кнопками */
+            margin-bottom: 10px;
+            /* расстояние между кнопками */
         }
+
         .menu li:last-child {
             margin-bottom: 0;
         }
+
         .menu li a {
             display: block;
             padding: 10px;
             text-transform: uppercase;
             text-decoration: none;
-            background: white;     /* БЕЛЫЙ ФОН КНОПКИ */
-            color: blue;        /* СИНИЙ ТЕКСТ */
+            background: white;
+            color: blue;
             text-align: center;
             font-family: Arial, sans-serif;
             font-weight: bold;
-            border-radius: 5px;    /* небольшие скругления (опционально) */
         }
+
         .menu li a:hover {
-            background: yellow;    /* золотистый фон при наведении */
-            color: black;           /* чёрный текст при наведении */
+            background: yellow;
+            color: black;
         }
     </style>
 </head>
+
 <body>
     <nav class="menu">
         <ul>
@@ -47,4 +54,5 @@
         </ul>
     </nav>
 </body>
+
 </html>
