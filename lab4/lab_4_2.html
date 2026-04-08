@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <title>Оформление вертикального меню</title>
@@ -14,20 +13,40 @@
             background: #fff;
         }
 
-        .menu ul {}
+        /* убираем стандартные маркеры списков */
+        .menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
 
-        .menu li {}
+        .menu li a {
+        }
 
-        .menu li a {}
+        .menu li a:hover {
+        }
 
-        .menu li a:hover {}
+        .menu li ul {
+            margin-left: 20px;
+        }
 
-        .menu li ul {}
+        /* minus.gif СЛЕВА для главных заголовков */
+        .menu > ul > li > a {
+            background-image: url('pic/minus.gif');
+            background-repeat: no-repeat;
+            background-position: left 10px center;
+            padding-left: 30px;
+        }
 
-        .menu li li {}
+        /* point.gif слева для подзаголовков */
+        .menu li li a {
+            background-image: url('pic/point.gif');
+            background-repeat: no-repeat;
+            background-position: left 10px center;
+            padding-left: 28px;
+        }
     </style>
 </head>
-
 <body>
     <nav class="menu">
         <ul>
@@ -65,5 +84,4 @@
         </ul>
     </nav>
 </body>
-
 </html>
