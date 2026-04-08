@@ -20,9 +20,7 @@
             list-style: none;
         }
 
-        /* добавляем relative для позиционирования псевдоэлемента */
         .menu li a {
-            position: relative;   /* единственное дополнение для спрайта */
         }
 
         .menu li a:hover {
@@ -32,49 +30,19 @@
             margin-left: 20px;
         }
 
-        /* минус (спрайт) для главных заголовков */
-        .menu > ul > li > a::before {
-            content: "";
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            background: url('pic/css_sprites.png') no-repeat;
-            background-position: -10px -10px;   /* координаты минуса */
-        }
-
-        /* точка (спрайт) для подзаголовков */
-        .menu li li a::before {
-            content: "";
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            background: url('pic/css_sprites.png') no-repeat;
-            background-position: -82px -10px;   /* координаты точки */
-            /*.bg-minus {
-    width: 16px; height: 16px;
-    background: url('css_sprites.png') -10px -10px;
-}*/
-/*.bg-plus {
-    width: 16px; height: 16px;
-    background: url('css_sprites.png') -46px -10px;
-}*/
-/*.bg-point {
-    width: 16px; height: 16px;
-    background: url('css_sprites.png') -82px -10px;
-}*/
-        }
-
-        /* сохраняем отступы, чтобы текст не наезжал на иконку */
+        /* minus.gif СЛЕВА для главных заголовков */
         .menu > ul > li > a {
+            background-image: url('pic/minus.gif');
+            background-repeat: no-repeat;
+            background-position: left 10px center;
             padding-left: 30px;
         }
+
+        /* point.gif слева для подзаголовков */
         .menu li li a {
+            background-image: url('pic/point.gif');
+            background-repeat: no-repeat;
+            background-position: left 10px center;
             padding-left: 28px;
         }
     </style>
@@ -116,4 +84,3 @@
         </ul>
     </nav>
 </body>
-</html>

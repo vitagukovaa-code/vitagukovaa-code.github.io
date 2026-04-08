@@ -2,39 +2,80 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Оформление вертикального меню (спрайт)</title>
+    <title>Оформление вертикального меню</title>
     <style>
-        html { background: #f0f0f0; }
-        .menu { width: 200px; background: #fff; }
-        .menu ul { margin: 0; padding: 0; list-style: none; }
-        .menu li a {
-            display: block;
-            padding: 8px 12px;
-            text-decoration: none;
-            color: #333;
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
+        html {
+            background: #f0f0f0;
         }
-        .menu li a:hover { background-color: #e0e0e0; }
-        .menu li ul { margin-left: 20px; }
 
-        /* Общие настройки иконки */
-        .menu li a::before {
+        .menu {
+            width: 200px;
+            background: #fff;
+        }
+
+        /* убираем стандартные маркеры списков */
+        .menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* добавляем relative для позиционирования псевдоэлемента */
+        .menu li a {
+            position: relative;   /* единственное дополнение для спрайта */
+        }
+
+        .menu li a:hover {
+        }
+
+        .menu li ul {
+            margin-left: 20px;
+        }
+
+        /* минус (спрайт) для главных заголовков */
+        .menu > ul > li > a::before {
             content: "";
-            display: inline-block;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 16px;
             height: 16px;
-            background: url('pic/css_sprites.png') no-repeat; /* ← проверьте путь */
-            margin-right: 8px;
-            vertical-align: middle;
+            background: url('pic/css_sprites.png') no-repeat;
+            background-position: -10px -10px;   /* координаты минуса */
         }
-        /* Минус для главных пунктов */
-        .menu > ul > li > a::before {
-            background-position: -10px -10px;
-        }
-        /* Точка для подпунктов */
+
+        /* точка (спрайт) для подзаголовков */
         .menu li li a::before {
-            background-position: -82px -10px;
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: url('pic/css_sprites.png') no-repeat;
+            background-position: -82px -10px;   /* координаты точки */
+            /*.bg-minus {
+    width: 16px; height: 16px;
+    background: url('css_sprites.png') -10px -10px;
+}*/
+/*.bg-plus {
+    width: 16px; height: 16px;
+    background: url('css_sprites.png') -46px -10px;
+}*/
+/*.bg-point {
+    width: 16px; height: 16px;
+    background: url('css_sprites.png') -82px -10px;
+}*/
+        }
+
+        /* сохраняем отступы, чтобы текст не наезжал на иконку */
+        .menu > ul > li > a {
+            padding-left: 30px;
+        }
+        .menu li li a {
+            padding-left: 28px;
         }
     </style>
 </head>
