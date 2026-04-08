@@ -2,115 +2,77 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Стили — эксперименты</title>
-
-    <!-- 1. подключение Google Fonts: Roboto для заголовков, Caveat для <strong> -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
-
-    <!-- 2. подключение MathJax для отображения формул -->
+    <title>Стили</title>
+    
+    <!-- Google Fonts: Roboto для заголовков, Caveat для strong -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- MathJax для формул (актуальная версия) -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
-
-    <!-- 4. подключение Favicon -->
+    
+    <!-- Favicon (сгенерированный файл favicon.ico должен лежать в той же папке) -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-
+    
+    <!-- Все стили через элемент style -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Бесшовный фон: цвет #C5ADC5 + повторяющийся узор из #B2B5E0 */
         body {
-            /*Бесшовный фон */
-            background: repeating-linear-gradient(45deg, #e9ecef 0px, #e9ecef 2px, #dee2e6 2px, #dee2e6 8px);
-            font-size: 1.5rem;
-            line-height: 2rem;
-            color: #2c3e50; 
+            background-color: #C5ADC5;
+            background-image: repeating-linear-gradient(45deg, #B2B5E0 0px, #B2B5E0 2px, transparent 2px, transparent 10px);
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
         }
-        .wrapper {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 10px;
+        
+        /* Заголовки — шрифт Roboto */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
         }
-
-        /* для гармоничного стиля */
-        h1, h2 {
-            font-family: 'Roboto', sans-serif;  /* шрифт Roboto для заголовков */
-            color: #1e466e;           
-            text-align: right;
-            text-shadow: 1px 1px 0 rgba(0,0,0,0.05);
-        }
-
-        p {
-            text-align: right; 
-        }
-        em, i {
-            color: #16a085;
-            font-style: italic;
-        }
-
-        /* Элемент <strong> – шрифт Caveat */
+        
+        /* Элемент strong — шрифт Caveat */
         strong {
             font-family: 'Caveat', cursive;
-            font-weight: 700;
-            font-size: 1.2em;
-            color: #e67e22;
         }
-
-        /*  Стили для <article>  */
+        
+        /* Article: скруглённая рамка, внешние и внутренние отступы */
         article {
-            border: 2px solid #dcdde1;        
-            border-radius: 25px;          
-            margin: 25px 0;                
-            padding: 20px 25px;             
-            background-color: rgba(255, 255, 255, 0.85);
-            transition: box-shadow 0.2s ease;
+            background-color: #FFFFFF;
+            border: 2px solid #B2B5E0;
+            border-radius: 25px;
+            margin: 20px 0;
+            padding: 20px 25px;
         }
-
-        article:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-        hr {
-            border: none;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #dcdde1, transparent);
+        
+        /* Дополнительно: для читаемости текста */
+        p {
             margin: 10px 0;
         }
-        /* Стиль для математических формул*/
-        mjx-container {
-            text-align: right !important;
-            margin: 10px 0;
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <article>
-            <h1>Приватные и публичные программы</h1>
-            <h2>Приватные программы</h2>
-            <p><em>Приватными программами</em> я называю те, которые будут использоваться только вами (их
-                разработчиками) или очень ограниченным кругом других людей, чьи навыки, требования и компьютеры хорошо
-                известны.</p>
-            <h2>Публичные программы</h2>
-            <p><em>Публичные программы</em> — прямая противоположность приватным. Они распространяются среди большого
-                числа людей.</p>
-            <p><strong>Лу Гринзоу</strong></p>
-        </article>
-        <hr>
-        <article>
-            <h1>Великая теорема Ферма</h1>
-            <p><b>Великая теорема Ферма́</b> (или <b>последняя теорема Ферма</b>)&nbsp;— одна из самых популярных теорем
-                математики. Сформулирована французским математиком Пьером Ферма в 1637 году. Несмотря на простоту
-                формулировки, буквально, на <q>школьном</q> арифметическом уровне, доказательство теоремы искали многие
-                математики на протяжении более трёхсот лет. И только в 1994 году теорема была доказана английским
-                математиком Эндрю Уайлсом с коллегами; публикация доказательства состоялась в 1995 году.
-            </p>
-            <h2>Формулировка</h2>
-            <p>Теорема утверждает, что для любого натурального числа \(n&gt;2\) уравнение
-                \[a^n + b^n = c^n\]
-                не имеет решений в целых ненулевых числах \(a, b, c.\)
-            </p>
-        </article>
-    </div>
+<div class="wrapper">
+    <article>
+        <h1>Приватные и публичные программы</h1>
+        <h2>Приватные программы</h2>
+        <p><em>Приватными программами</em> я называю те, которые будут использоваться только вами (их разработчиками) или очень ограниченным кругом других людей, чьи навыки, требования и компьютеры хорошо известны.</p>
+        <h2>Публичные программы</h2>
+        <p><em>Публичные программы</em> — прямая противоположность приватным. Они распространяются среди большого числа людей.</p>
+        <p><strong>Лу Гринзоу</strong></p>
+    </article>
+    <hr>
+    <article>
+        <h1>Великая теорема Ферма</h1>
+        <p><b>Великая теорема Ферма́</b> (или <b>последняя теорема Ферма</b>)&nbsp;— одна из самых популярных теорем математики. Сформулирована французским математиком Пьером Ферма в 1637 году. Несмотря на простоту формулировки, буквально, на <q>школьном</q> арифметическом уровне, доказательство теоремы искали многие математики на протяжении более трёхсот лет. И только в 1994 году теорема была доказана английским математиком Эндрю Уайлсом с коллегами; публикация доказательства состоялась в 1995 году.</p>
+        <h2>Формулировка</h2>
+        <p>Теорема утверждает, что для любого натурального числа \(n&gt;2\) уравнение
+            \[a^n + b^n = c^n\]
+            не имеет решений в целых ненулевых числах \(a, b, c.\)
+        </p>
+    </article>
+</div>
 </body>
 </html>
